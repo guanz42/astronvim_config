@@ -1,11 +1,11 @@
 -- Update this path
-local extension_path = vim.env.HOME .. '/.vscode-server/extensions/vadimcn.vscode-lldb-1.9.2/'
+local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.9.2/'
 local codelldb_path = extension_path .. 'adapter/codelldb'
 local liblldb_path = extension_path .. 'lldb/lib/liblldb'
 local this_os = vim.loop.os_uname().sysname;
 
 -- The path in windows is different
-if this_os:find "Windows" then
+if vim.fn.has "win32" == 1 then
   codelldb_path = extension_path .. "adapter\\codelldb.exe"
   liblldb_path = extension_path .. "lldb\\bin\\liblldb.dll"
 else
@@ -30,12 +30,13 @@ local opts = {
     server = {
       settings = {
         ["rust-analyzer"] = {
-          checkOnSave = {
-            enable = true,
+          checkOnSave = true,
+          check = {
             command = "clippy",
           },
           cargo = {
-            allFeatures = true,
+            -- allFeatures = true,
+            features = true,
           },
         },
       }
@@ -45,6 +46,11 @@ local opts = {
       adapter = require('rust-tools.dap').get_codelldb_adapter(
         codelldb_path, liblldb_path)
     },
+    tools = {
+      hover_actions = {
+        auto_focus = true,
+      }
+    }
   }
 }
 

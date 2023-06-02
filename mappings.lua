@@ -20,6 +20,10 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>k"] = {
+      "<cmd>lua require'rust-tools'.hover_actions.hover_actions()<CR>",
+      desc = "Hover actions",
+    },
   },
   i = {
     -- quick save
