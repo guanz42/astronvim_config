@@ -8,24 +8,6 @@ return {
 
   -- rust
   { import = "astrocommunity.pack.rust" },
-  {
-    "simrat39/rust-tools.nvim",
-    opts = {
-      server = {
-        settings = {
-          ["rust-analyzer"] = {
-            checkOnSave = {
-              enable = true,
-              command = "clippy",
-            },
-            cargo = {
-              allFeatures = true,
-            },
-          },
-        }
-      }
-    }
-  }
 
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
