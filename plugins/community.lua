@@ -8,6 +8,8 @@ return {
 
   -- rust
   { import = "astrocommunity.pack.rust" },
+  -- go
+  { import = "astrocommunity.pack.go" },
 
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
