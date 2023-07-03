@@ -5,6 +5,14 @@ return {
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
   { import = "astrocommunity.colorscheme.catppuccin" },
+  {
+    "catppuccin",
+    opts = {
+      transparent_background = true,
+      term_colors = true,
+    },
+  },
+
   { import = "astrocommunity.diagnostics.trouble-nvim" },
 
   -- rust
