@@ -15,6 +15,8 @@ return {
 
   { import = "astrocommunity.diagnostics.trouble-nvim" },
 
+  { import = "astrocommunity.motion.flash-nvim" },
+
   -- rust
   { import = "astrocommunity.pack.rust" },
   -- go
